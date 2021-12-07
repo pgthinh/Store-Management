@@ -21,7 +21,7 @@ This is a small project in my first year at University of Science, VNU-HCM.
 Input the item information (name, quantity), discount or not and it will show the total money you have to pay. It will update the quantity of items in store and automatically, the total money will be counted into revenue of that day.
 
 ##### Customer Infor
-Including Create New Member Card and List of Member, the information is about name and phone number.
+Including _Create New Member Card_ and _List of Member_, the information is about name and phone number.
 
 
 #### Extra
