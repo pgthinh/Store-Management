@@ -24,8 +24,19 @@ Input the item information (name, quantity), discount or not and it will show th
 Including _Create New Member Card_ and _List of Member_, the information is about name and phone number.
 
 #### Rate & Feedback
-You can rate and write some feedback for the service or product.
+You can rate and write some feedback for the service or product. Owner can see rate as well as feedback of customers.
 
+### 7. Employee
+#### List
+Show information of employee including name, phone number and identity card.
+
+### 8. Exit
+
+#### Check-in
+Record the time & date employee arriving the store.
+
+#### Check-out 
+Record the time & date employee leaving the store.
 
 ### Extra
 The program will play a song whenever you use.
