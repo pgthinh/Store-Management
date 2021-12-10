@@ -1,10 +1,11 @@
-
 void Welcome(){
     ShowConsoleCursor(false);
+    
     gotoxy(0, 0);
     cout << setfill('*') << setw(57) << "\n";
     gotoxy(0, 11);
     cout << setfill('*') << setw(57) << "\n";
+    
     for(int i = 1; i <= 10; i++){
         gotoxy(0, i);
         cout << "*";
@@ -19,7 +20,6 @@ void Welcome(){
     cout << "STORE MANAGEMENT";
     SetColor(12);
     cout << " * * *\n";
-
     gotoxy(17, 6);
     SetColor(9);
     cout << "/* Pham Gia Thinh */\n";
@@ -50,6 +50,7 @@ int menu(string Menu[], int menu_len, string type, int x, int y, bool vertical){
                 else if(pos == 3) findanddelete();
                 else if(pos == 4) update();
                 else if(pos == 5) customermenu();
+                else if(pos == 6) employee();
                 else return 0;
             }
             else if(type == "update"){
@@ -69,7 +70,14 @@ int menu(string Menu[], int menu_len, string type, int x, int y, bool vertical){
             else if(type == "customer"){
                 if(pos == 0) getbill();
                 else if(pos == 1) customerinfor();
-                else if(pos == 2) revenue();
+                else if(pos == 2) rate();
+                else break;
+            }
+            else if(type == "employee"){
+                if(pos == 0) listemployee();
+                else if(pos == 1) checkin();
+                else if(pos == 2) checkout();
+                else if(pos == 3) statistic();
                 else break;
             }
         }
@@ -81,7 +89,6 @@ int menu(string Menu[], int menu_len, string type, int x, int y, bool vertical){
 
 void show_menu(string Menu[], int menu_len, int choose, string type, int x, int y, bool vertical){
     if(type != "again" && type != "update") system("cls");
-
 
     //Print menu
     for(int i = 0; i < menu_len; i++){
