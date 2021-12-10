@@ -4,7 +4,7 @@ void revenue(){
 
     gotoxy(0,0);
     cout << setfill('*') << setw(49) << "\n";
-    cout << "Day           Revenue            Profit      ";
+    cout << "Date          Revenue            Profit      ";
     gotoxy(0,2);
     cout << setfill('*') << setw(49) << "\n";
 
