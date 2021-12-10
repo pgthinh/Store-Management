@@ -71,8 +71,6 @@ void takebill(){
 	}
 
     nbill =  temp1 ;
-    //for (int i = 1; i <= nbill; i++)
-      // cout << billinfors[i].date << " " << billinfors[i].money << '\n';
 
     f.close();
 }
