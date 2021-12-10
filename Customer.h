@@ -2,6 +2,7 @@
 #include<iostream>
 #include<cmath>
 #include <ctime>
+#include <string.h>
 void customermenu(){
     clrscr();
     menu(customer_menu, customer_menu_len, "customer", 0, 0, true);
@@ -71,7 +72,7 @@ void customerinfor(){
     clrscr();
 
     string name, phone;
-    bool choose = menu(yes_no_menu3, yes_no_menu_len3, "again", 2 , 7 , true);
+    bool choose = menu(yes_no_menu3, yes_no_menu_len3, "again", 0 , 0 , true);
     if (choose){
         clrscr();
         ofstream f;
@@ -90,6 +91,7 @@ void customerinfor(){
         f << phone << '\n';
         SetColor(10);
         cout << '\n' << "CREATED SUCCESSFULLY!";
+
 
         f.close();
         _getch();
@@ -118,6 +120,98 @@ void customerinfor(){
         }
         _getch();
     }
-
-
 }
+
+void feedback(){
+    clrscr();
+    ofstream f;
+    f.open("feedback.txt", ofstream::out | ofstream::app);
+
+    string name;
+    int mark, cnt = 0;
+    char a;
+
+    SetColor(11);
+    cout << "Name : ";
+    SetColor(15);
+    cin >> name;
+    SetColor(11);
+    cout << "Rate : " << "  /10";
+    gotoxy(7,1);
+    SetColor(15);
+    cin >> mark;
+    if (mark <=5 ) cout << '\n' << "Sorry for bad experience, we will improve our service" << '\n';
+    else cout << '\n'<< "Thank you" << '\n';
+    f << name << " " << mark << "/10" << "#" << '\n';
+
+    SetColor(10);
+    cout <<'\n' << "Do you want to write some feedback for us ?";
+    SetColor(15);
+    bool check = menu(yes_no_menu, yes_no_menu_len, "again", 6, 12 , false);
+
+    if (check){
+        clrscr();
+        SetColor(12);
+        cout << "When you have done your feedback please type 0 and we use _ instead of spacebar" << '\n';
+        cout << "                       Sorry for the inconvenience                             " << '\n';
+        SetColor(11);
+        cout << '\n' << "Your feedback: " << '\n';
+        SetColor(15);
+        while (a != '0'){
+            cnt++;
+            cin >> a;
+            if ( 70-cnt <= 5 && a == '_'){
+                cnt = 0;
+                f << '\n';
+            }
+            else if (a=='_') f << " ";
+            else if (a=='0'){}
+            else f << a;
+        }
+        f << '\n';
+        SetColor(10);
+        cout << '\n' << "Thank you for your feedback";
+        f.close();
+        _getch();
+    }
+}
+
+void showfb(){
+    clrscr();
+    ifstream f;
+    f.open("feedback.txt", ios::in);
+
+    SetBGColor(3);
+    cout << "                              FEEDBACK                              " << '\n';
+    SetBGColor(0);
+
+    string line;
+    getline(f,line);
+
+    while (line.length()!=0){
+        if (line[line.length()-1]== '#'){
+            SetColor(11);
+            cout << '\n' ;
+            for (int i = 0; i < line.length()-1 ; i++)
+                cout << line[i];
+            cout << '\n';
+        }
+        else{
+            SetColor(15);
+            cout << line << '\n';
+        }
+        getline(f,line);
+    }
+    f.close();
+    _getch();
+}
+
+void rate(){
+    clrscr();
+
+    bool choose = menu(yes_no_menu4, yes_no_menu_len4, "again", 0 , 0 , true);
+
+    if (choose) feedback();
+    else showfb();
+}
+
