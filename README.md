@@ -4,7 +4,7 @@
 This project is about writing a program which helps my parents manage their store.
 
 ### 1. Add & Current Item
-  You can add new items, see current items. If you add old item, it will automactically increasing the quantity of item.
+  You can add new items, see current items. If you add old item, it will automatically increasing the quantity of item.
 
 ### 2. Restock
   Show which items are out of stock and will be out of stock soon. Then ask whether you want to restock them, if the answer is yes it will update the quantity you input.
@@ -20,7 +20,7 @@ This project is about writing a program which helps my parents manage their stor
 
 ### 6. Customer Service
 #### Get Bill
-Input the item information (name, quantity), discount or not and it will show the total money customes have to pay. It will update the quantity of items in store and automatically, the total money will be counted into revenue of that day.
+Input the item information (name, quantity), discount or not and it will show the total money customers have to pay. It will update the quantity of items in store and automatically, the total money will be counted into revenue of that day.
 
 #### Customer Infor
 Including _Create New Member Card_ and _List of Member_, the information is about name and phone number.
