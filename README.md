@@ -1,5 +1,7 @@
 # Manage-Store
-This is a small project in my first year at University of Science, VNU-HCM.
+>This is a small project in my first year at University of Science, VNU-HCM.
+
+This project is about writing a program which helps my parents manage their store.
 
 ### 1. Add & Current Item
   You can add new items, see current items. If you add old item, it will automactically increasing the quantity of item.
@@ -30,19 +32,18 @@ You can rate and write some feedback for the service or product. Owner can see r
 #### List
 Show information of employee including name, phone number and identity card.
 
-### 8. Exit
-
 #### Check-in
 Record the time & date employee arriving the store.
 
 #### Check-out 
 Record the time & date employee leaving the store.
 
+
+### 8. Exit 
+
 ### Extra
 The program will play a song whenever you use.
 
 
-
-
-
+**_Cause I am just a freshman, my program may not clean and good enough. However, I will try to improve it next time._**
  
