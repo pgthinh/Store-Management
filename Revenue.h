@@ -2,7 +2,7 @@ void revenue(){
     clrscr();
     takebill();
 
-	gotoxy(0,0);
+    gotoxy(0,0);
     cout << setfill('*') << setw(49) << "\n";
     cout << "Day           Revenue            Profit      ";
     gotoxy(0,2);
