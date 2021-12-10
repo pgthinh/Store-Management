@@ -1,18 +1,21 @@
 ///===== Variables =====
 //Menu
-string main_menu[7] = {" 1. Add & Current Item ", " 2. Restock ", " 3. Revenue & Profit ", " 4. Find & Delete ", " 5. Update Price & Quantity ", " 6. Customer Service ", " 7. Exit "};
-const int main_menu_len = 7;
-string customer_menu[6] = {" 1. Get Bill ", " 2. Customer Infor ", " 3. Rate ", " 4. Impossible (899 mines, 30*30 grid) ", " 5. Custom ", " 6. Return "};
-const int customer_menu_len = 6;
+string main_menu[8] = {" 1. Add & Current Item ", " 2. Restock ", " 3. Revenue & Profit ", " 4. Find & Delete ", " 5. Update Price & Quantity ", " 6. Customer Service "," 7. Employee ", " 8. Exit "};
+const int main_menu_len = 8;
+string customer_menu[4] = {" 1. Get Bill ", " 2. Customer Infor ", " 3. Rate & Feedback ", " 4. Return "};
+const int customer_menu_len = 4;
 string yes_no_menu[2] = {" YES ", " NO "};
 const int yes_no_menu_len = 2;
-string yes_no_menu1[3] = {" PRICE ", " AMOUNT ", " BOTH "};
+string yes_no_menu1[3] = {" Price ", " Amount ", " Both "};
 const int yes_no_menu1_len = 3;
-string yes_no_menu2[2] = {" FIND ", " DELETE "};
+string yes_no_menu2[2] = {" Find ", " Delete "};
 const int yes_no_menu_len2 = 2;
 string yes_no_menu3[2] = {" 1. Create New Member Card ", " 2. List of member "};
 const int yes_no_menu_len3 = 2;
-string Level_Highscore[4] = {" EASY ", " INTERMEDIATE ", " EXPERT ", " IMPOSSIBLE "};
+string yes_no_menu4[2] = {" 1. Rate for us ", " 2. See feedback "};
+const int yes_no_menu_len4 = 2;
+string employee_menu[5] = {" 1. List ", " 2. Check-in ", " 3. Check-out ", " 4. Statistics ", " 5. Return "};
+const int employee_menu_len = 5;
 
 ///===== Function Prototype
 struct billinfor{
@@ -76,3 +79,13 @@ void updateboth();
 void customermenu();
 void getbill();
 void customerinfor();
+void rate();
+void feedback();
+void showfb();
+
+//Employee.h
+void employee();
+void listemployee();
+void checkin();
+void checkout();
+void statistic();
