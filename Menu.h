@@ -1,11 +1,9 @@
 void Welcome(){
     ShowConsoleCursor(false);
-    
     gotoxy(0, 0);
     cout << setfill('*') << setw(57) << "\n";
     gotoxy(0, 11);
     cout << setfill('*') << setw(57) << "\n";
-    
     for(int i = 1; i <= 10; i++){
         gotoxy(0, i);
         cout << "*";
@@ -20,6 +18,7 @@ void Welcome(){
     cout << "STORE MANAGEMENT";
     SetColor(12);
     cout << " * * *\n";
+
     gotoxy(17, 6);
     SetColor(9);
     cout << "/* Pham Gia Thinh */\n";
@@ -37,6 +36,7 @@ int menu(string Menu[], int menu_len, string type, int x, int y, bool vertical){
     char n;
     int pos = 0;
     bool Back = false;
+
     while(true){
         show_menu(Menu, menu_len, pos, type, x, y, vertical);
         n = getch(); // Press key
@@ -51,6 +51,7 @@ int menu(string Menu[], int menu_len, string type, int x, int y, bool vertical){
                 else if(pos == 4) update();
                 else if(pos == 5) customermenu();
                 else if(pos == 6) employee();
+                else if(pos == 7) changepassword();
                 else return 0;
             }
             else if(type == "update"){
@@ -71,6 +72,7 @@ int menu(string Menu[], int menu_len, string type, int x, int y, bool vertical){
                 if(pos == 0) getbill();
                 else if(pos == 1) customerinfor();
                 else if(pos == 2) rate();
+                else if(pos == 3) finditem();
                 else break;
             }
             else if(type == "employee"){
@@ -90,6 +92,7 @@ int menu(string Menu[], int menu_len, string type, int x, int y, bool vertical){
 void show_menu(string Menu[], int menu_len, int choose, string type, int x, int y, bool vertical){
     if(type != "again" && type != "update") system("cls");
 
+
     //Print menu
     for(int i = 0; i < menu_len; i++){
         if(vertical) gotoxy(y, x + i);
@@ -107,5 +110,86 @@ void show_menu(string Menu[], int menu_len, int choose, string type, int x, int 
             SetColor(15);
             cout << Menu[i] << endl;
         }
+    }
+}
+void changepassword(){
+    string line, current, confirm, newpass;
+    while (true){
+        clrscr();
+
+        ifstream f;
+        f.open("pass.txt", ios::in);
+        getline(f,line);
+        f.close();
+        SetColor(11);
+        cout << "Current password: ";
+        SetColor(15);
+        cin >> current;
+
+        SetColor(11);
+        cout << '\n' << "New password: ";
+        SetColor(15);
+        cin >> newpass;
+        SetColor(11);
+        cout << '\n' << "Confirm password: ";
+        SetColor(15);
+        cin >> confirm;
+
+        if (confirm == newpass && current == line){
+            ofstream f;
+            f.open("pass.txt", ios::out | ios::trunc);
+            f << newpass;
+            f.close();
+            SetColor(10);
+            cout <<'\n' << "Changed successfully!";
+            SetColor(15);
+            _getch();
+            break;
+        }
+        else{
+            SetColor(12);
+            cout <<'\n' << "Please try again";
+            SetColor(15);
+            _getch();
+        }
+    }
+}
+
+bool password(){
+    char x[10];
+    string s = "", ss, pass;
+    clrscr();
+    SetColor(11);
+    cout << "     PASSWORD     " << '\n';
+    SetColor(15);
+
+    for(int i=0; i<10;i++){
+        x[i]=getch();
+        cout<<"*";
+
+        if(x[i]=='\r') //check if enter key is pressed
+            break;
+        else s = s+x[i];
+    }
+
+    ifstream f;
+    f.open("pass.txt", ios::in);
+    getline(f,pass);
+    f.close();
+
+    for (int i = 0; i <= s.length()-1; i++)
+        if (s[i]!= ' ') ss +=s[i];
+
+    if (ss==pass || (ss == defaultpass && pass.length()==0)){
+        SetColor(10);
+        cout << '\n' << "Logged in successfully!";
+        _getch();
+        return true;
+    }
+    else{
+        SetColor(12);
+        cout << '\n' << "Failed to log in, please try again";
+        _getch();
+        return false;
     }
 }
