@@ -26,14 +26,21 @@ using namespace std;
 #include "UpdatePrice.h"
 #include "Customer.h"
 #include "Employee.h"
-
+/*
+to do
+*/
 ///==================== Main Program ====================
 main(){
+
     srand(time(NULL));
     SetConsoleTitle("STORE MANAGEMENT - Pham Gia Thinh");
     ShowConsoleCursor(false);
-    Music();
+ //   Music();
     Welcome();
-    clrscr();
-    menu(main_menu, main_menu_len, "main", 0, 0, true);
+    while(true){
+        if (password()){
+            menu(main_menu, main_menu_len, "main", 0, 0, true);
+            break;
+        }
+    }
 }
