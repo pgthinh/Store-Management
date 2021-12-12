@@ -1,4 +1,4 @@
-# Manage-Store
+# Store Management
 >This is a small project in my first year at University of Science, VNU-HCM.
 
 This project is about writing a program which helps my parents manage their store.
@@ -45,5 +45,4 @@ Record the time & date employee leaving the store.
 The program will play a song whenever you use.
 
 
-**_Cause I am just a freshman, my program may not clean and good enough. However, I will try to improve it next time._**
  
